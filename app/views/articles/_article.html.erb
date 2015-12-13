@@ -1,0 +1,10 @@
+<div id="article-<%= article.id %>" class="tile">
+<div class="user">
+    <%= link_to gravatar_for(article.user), article.user %>
+    <span class="user"><%= link_to article.user.name, article.user %></span>
+</div>
+<span class="content"><%= article.content %></span>
+<span class="timestamp">
+    Posted <%= time_ago_in_words(article.created_at) %> ago.
+</span>
+</div>
