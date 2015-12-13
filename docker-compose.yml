@@ -1,0 +1,28 @@
+db:
+  image: postgres
+  volumes:
+    - /var/lib/postgresql
+  ports:
+      - "5432:5432"
+
+web:
+    build: .
+    command: bundle exec rails s -b '0.0.0.0'
+    environment:
+        # - PATH=/root/.local/bin:$PATH
+        - HOST=0.0.0.0
+        - APPROOT=http://localhost:3000
+        - PGUSER=postgres
+        - PGPASS
+        - PGHOST=postgres
+    volumes:
+        - .:/myapp
+    ports:
+        - "3000:3000"
+    links:
+        - db
+
+database:
+    image: postgres
+    volumes_from:
+        - db
