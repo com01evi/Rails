@@ -1,7 +1,7 @@
 <div id="article-<%= article.id %>" class="tile">
 <div class="user">
     <%= link_to gravatar_for(article.user), article.user %>
-    <span class="user"><%= link_to article.user.name, article.user %></span>
+    <span class="user-name"><%= link_to article.user.name, article.user %></span>
 </div>
 <span class="content"><%= article.content %></span>
 <span class="timestamp">
