@@ -14,22 +14,4 @@
  *= require_self
  */
 
-header{
-    background-color: #328cc8;
-    color: #fff;
-    font-size: 110px;
-    font-family: "Ubuntu","Inform W01 Book","Avenir Next",Helvetica,Arial,"Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo",sans-serif;
-    border-bottom: 5px solid #4a4a49;
-    margin-bottom: 50px;
 
-
-}
-
-body{
-    background-color: rgba(0,0,0,0.035);
-    margin: 0px;
-}
-#center{
-    width: 1250px;
-    margin: auto;
-}

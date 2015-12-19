@@ -1,16 +1,104 @@
+
+
 header{
-    height: 100px;
+    height: 70px;
+    /* position: fixed; */
+    background-color: #1C3738;
+    color: #F4FFF8;
+    font-size: 50px;
+    font-family: "Padauk-book","Inform W01 Book","Avenir Next",Helvetica,Arial,"Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ","Meiryo",sans-serif;
+    border-bottom: 5px solid #001E00;
+    margin-bottom: 50px;
+    ul {
+        text-align: left;
+        display: inline;
+        margin: 0;
+        list-style: none;
+        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        float: left;
+    }
+    ul li {
+        font: bold 12px/18px sans-serif;
+        display: inline-block;
+        margin-right: -4px;
+        position: relative;
+        padding: 15px 20px;
+        background: #8BAAAD;
+        cursor: pointer;
+        -webkit-transition: all 0.8s;
+        -moz-transition: all 0.8s;
+        -ms-transition: all 0.8s;
+        -o-transition: all 0.8s;
+        transition: all 0.8s;
+    }
+    ul li:hover {
+        background: #8BAAAD;
+        color: #F4FFF8;
+    }
+    ul li ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 150px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        -transition: opacity 0.2s;
+    }
+    ul li ul li { 
+        background: #8BAAAD; 
+        display: block; 
+        text-shadow: 0 -1px 0 #000;
+        a{
+            color: #F4FFF8;
+        }
+    }
+    ul li ul li:hover { background: #8BAAAD; }
+    ul li:hover ul {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    span{
+        float: left;
+        display: block;
+        margin: 0px auto 0px auto;
+
+    }
+}
+
+body{
+    background-color: #F4FFF8; 
+    /* rgba(0,0,0,0.035); */
+    margin: 0px;
 
 }
 
-aside {
-    textarea {
-        height: 100px;
-        margin-bottom: 5px;
+a{
+    color: rgba(0,0,0,0.8);
+    transition: color 0.7s ease;
+    text-decoration: none;
+    &:hover{
+        color: rgba(0,0,0,0.5)
     }
+}
+
+#center{
+    max-width: 932px;
+    width: calc(100% - (50px * 2));
+    margin: auto;
 }
 
 .pagination{
-        clear: both;
-    
-    }
+    clear: both;
+}

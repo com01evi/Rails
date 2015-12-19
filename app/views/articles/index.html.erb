@@ -1,4 +1,50 @@
-<div class="articles">
-<%= render @articles %>
+<div id="main">
+<section id="top">
+    <div id="hot-topic">
+        <div id="pic"><%= image_tag @article.picture.url if @article.picture? %> </div> 
+        <div id="info">
+            <span class="title"><%= link_to @article.title, @article %></span>
+            <div class="user"> 
+                <%= link_to gravatar_for(@article.user), @article.user %>
+                <span class="user-name"><%= link_to @article.user.name, @article.user %></span>
+            </div>
+            <span class="timestamp">
+                Posted <%= time_ago_in_words(@article.created_at) %> ago.
+            </span>
+        </div>
+    </div>
+    <div id="feature">
+        <div id="pic"><%= image_tag @feature.picture.url if @feature.picture? %> </div> 
+        <div id="info">
+            <span class="title"><%= link_to @feature.title, @feature %></span>
+            <div class="user"> 
+                <%= link_to gravatar_for(@feature.user), @feature.user %>
+                <span class="user-name"><%= link_to @feature.user.name, @feature.user %></span>
+            </div>
+            <span class="timestamp">
+                Posted <%= time_ago_in_words(@feature.created_at) %> ago.
+            </span>
+        </div>
+    </div>
+</section>
+<section>
+    <div id="popular">
+        <div id="pic"><%= image_tag @popular.picture.url if @popular.picture? %> </div> 
+        <div id="info">
+            <span class="title"><%= link_to @popular.title, @popular %></span>
+            <div class="user"> 
+                <%= link_to gravatar_for(@popular.user), @popular.user %>
+                <span class="user-name"><%= link_to @popular.user.name, @popular.user %></span>
+            </div>
+            <span class="timestamp">
+                Posted <%= time_ago_in_words(@popular.created_at) %> ago.
+            </span>
+        </div>
+
+    </div>
+</section>
+
 </div>
-<%= will_paginate @articles %>
+<aside>
+    <%= render @articles.take(5) %>
+</aside>

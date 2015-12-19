@@ -1,0 +1,14 @@
+<%= form_for(@article, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+        <%= f.label :title%>
+        <%= f.text_field :title, placeholder: "Input title" %>
+        
+        <%= f.label :content%>
+        <%= f.text_area :content, placeholder: "Inbut content" %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+    <span class="picture">
+            <%= f.file_field :picture %>
+    </span>
+<% end %>

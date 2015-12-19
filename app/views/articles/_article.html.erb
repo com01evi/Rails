@@ -1,10 +1,14 @@
-<div id="article-<%= article.id %>" class="tile">
-<div class="user">
-    <%= link_to gravatar_for(article.user), article.user %>
-    <span class="user-name"><%= link_to article.user.name, article.user %></span>
+<div id="article-<%= article.id %>" class="recent-articles">
+<div id="pic"><%= image_tag article.picture.url(:thumb) if article.picture? %> </div> 
+
+<div id="info">
+    <span class="title"><%= link_to article.title, article %></span>
+    <div class="user"> 
+        <%= link_to gravatar_for(article.user), article.user %>
+        <span class="user-name"><%= link_to article.user.name, article.user %></span>
+    </div>
+    <span class="timestamp">
+        Posted <%= time_ago_in_words(article.created_at) %> ago.
+    </span>
 </div>
-<span class="content"><%= article.content %></span>
-<span class="timestamp">
-    Posted <%= time_ago_in_words(article.created_at) %> ago.
-</span>
 </div>

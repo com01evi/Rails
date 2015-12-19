@@ -8,11 +8,27 @@
 </head>
 <body>
     <header>
-        homu
-    
+        <ul><li>Menu
+                <ul>
+                    <% if logged_in? %>
+                        <li><%= link_to "Users", '#' %></li>
+                        <li><%= link_to "Profile", current_user %></li>
+                        <li><%= link_to "Settings", '#' %></li>
+                        <li>
+                            <%= link_to "Log out", logout_path, method: "delete" %>
+                        </li>
+                        <li><%= link_to "Create Articles", '#' %></li>
+                    <% else %>
+                        <li><%= link_to "Log in", login_path %></li>
+                    <% end %>
+                </ul>
+            </li>
+        </ul>
+        <%# <span>Website</span> %>
     </header>
     <div id="center">
         <%= yield %>
     </div>
+
 </body>
 </html>

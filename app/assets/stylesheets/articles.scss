@@ -3,58 +3,173 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* articles */
 
-.articles {
-    list-style: none;
-    padding: 0;
-    .tile{
-        display: block;
-        height: 250px;
-        width: 200px;
-        border: 1px solid #e8e8e8;
-        border-top: 5px solid #328cc8;
-        float: left;
-        margin: 0 0 25px 20px;
-        padding: 5px 10px 5px 10px;
-        -webkit-box-shadow:0 1.5px 1px rgba(0, 0, 0, 0.3), 0 0 0.2px rgba(0, 0, 0, 0.1) inset;
-        box-shadow:0 1.5px 1px rgba(0, 0, 0, 0.3), 0 0 0.2px rgba(0, 0, 0, 0.1) inset;
-        background-color: #fff;
-    }
-
-    li {
-        padding: 10px 0;
-        border-top: 1px solid #e8e8e8;
-    }
-    .user {
-        margin-top: 5px;
-        margin-bottom: 50px;
-        padding-top: 0;
-        .user-name{
-            padding-top: 5px;
-        
-        }
-    }
-    .content {
-        display: block;
-        height:  120px;
-        margin-bottom: 20px;
-        img {
+.tile{
+    display: block;
+    border: 1px solid #e8e8e8;
+    border-top: 3px solid #001E00;
+    -webkit-box-shadow:0 1.5px 1px rgba(0, 0, 0, 0.3), 0 0 0.2px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1.5px 1px rgba(0, 0, 0, 0.3), 0 0 0.2px rgba(0, 0, 0, 0.1) inset;
+    background-color: #fff;
+    padding: 10px;
+    margin: 0px 12px 12px 0px;
+    #pic{
+        text-align: right;
+        img{
+            margin: auto;
             display: block;
-            padding: 5px 0;
+            width: 100%;
+            height: auto;
         }
     }
-    .timestamp {
+    #info{
+        display: block;
+        margin: 0px 0px 15px 0px;
+        .title{
+            display: block;
+            /* border-bottom: 1.0px solid rgba(0, 0, 0, 0.1); */
+            padding-bottom: 5px;
+            margin-bottom: 2px
+
+        }
+        .user{
+            /* text-align: right; */
+            float: right;
+        }
+    }
+}
+
+#main{
+    display: block;
+    width: 616px;
+    float: left;
+    #hot-topic{
+        @extend .tile;
+        height: 400px;
+        width: calc(60.66666% - 6.6px);
+        float: left;
+        #info{
+            margin: 15px auto 15px auto;
+            .title{
+                display: block;
+                margin: auto;
+                font-size: 24px;
+                font-weight: 900;
+            }
+        }
+    }
+    #feature{
+        @extend .tile;
+        height: 400px;
+        width: calc(30.333333% - 6.666px);
+        float: left;
+        #info{
+            display: block;
+            margin: 15px 0px 15px 0px;
+            .title{
+                font-size: 22px;
+                font-weight: 900;
+            }
+        }
+    }
+    #popular{
+        @extend .tile;
+        clear: both;
+        #info{
+            display: block;
+            margin: 15px 0px 15px 0px;
+            .title{
+                font-size: 26px;
+                font-weight: 900;
+            }
+        }
+
+    }
+}
+aside{
+    display: block;
+    width: 33.3333%;
+    float: left;
+    .recent-articles{
+        @extend .tile;
+        height: 105px;
+        width: 95%;
+        float: left;
+        #pic{
+            height: 100px;
+            float: left;
+            margin: 0px 16px 0px 0px;
+            img{
+            }
+
+        }
+        #info{
+            display: block;
+            margin: 0px 0px 15px 0px;
+            .title{
+                font-size: 13px;
+                font-weight: 900;
+            }
+        }
+    }
+}
+li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+}
+.user {
+    height: 35px;
+    margin-top: 5px;
+    /* margin-bottom: 50px; */
+    padding-top: 0;
+    .user-name{
+        float: left;
+        display: block;
+        padding-top: 7px;
         font-size: 12px;
         color: #999;
-        display: block;
-        margin-left: 60px;
+
     }
     .gravatar {
         float: left;
-        margin-right: 10px;
+        margin-left: 60px;
+        margin-right: 5px;
         width: 30px;
         border-radius: 30px;
         -webkit-border-radius: 30px;
         -moz-border-radius: 30px;
     }
-    
+}
+.content {
+    display: block;
+    height:  130px;
+    margin-bottom: 20px;
+    img {
+        display: block;
+        padding: 5px 0;
+    }
+}
+.timestamp {
+    font-size: 12px;
+    color: #999;
+    display: block;
+    text-align: right;
+    clear: right;
+}
+
+article #body{
+    width: 850px;
+    margin: auto;
+    height: auto;
+    h1{}
+    .user{
+        float: right;
+    }
+    #content{
+        clear: both;
+        font-size: 18px;
+        line-height: 28px;
+        color: #000;
+        margin-top: 20px;
+        height: auto;
+    }
 }
