@@ -1,4 +1,8 @@
-
+@mixin box_sizing {
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+}
 
 header{
     height: 70px;
@@ -93,7 +97,7 @@ a{
     }
 }
 
-#center{
+#container{
     max-width: 932px;
     width: calc(100% - (50px * 2));
     margin: auto;
@@ -102,3 +106,31 @@ a{
 .pagination{
     clear: both;
 }
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+input {
+    height: auto !important;
+}
+
+#error_explanation {
+    color: red;
+    ul {
+        color: red;
+        margin: 0 0 30px 0;
+    }
+}
+
+/* .field_with_errors { */
+    /* @extend .has-error; */
+    /* .form-control { */
+        /* [> color: $state-danger-text; <] */
+    /* } */
+/* } */

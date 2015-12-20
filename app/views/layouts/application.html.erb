@@ -26,7 +26,10 @@
         </ul>
         <%# <span>Website</span> %>
     </header>
-    <div id="center">
+    <div id="container">
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
         <%= yield %>
     </div>
 

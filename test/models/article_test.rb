@@ -21,10 +21,10 @@ class ArticleTest < ActiveSupport::TestCase
         assert_not @article.valid?
     end
 
-    test "content should be at most 140 characters" do
-        @article.content = "a" * 141
-        assert_not @article.valid?
-    end
+    # test "content should be at most 140 characters" do
+        # @article.content = "a" * 141
+        # assert_not @article.valid?
+    # end
 
     test "order should be most recent first" do
         assert_equal articles(:most_recent), Article.first
